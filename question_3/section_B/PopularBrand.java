@@ -9,6 +9,7 @@ public class PopularBrand {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
+		// HashMap to store the details of all the suveyed people
 		Map<Integer, ToothPaste> survey = new HashMap<Integer, ToothPaste>();
 		System.out.print("Enter the Number of people in the survey : ");
 		int num = sc.nextInt();
@@ -17,6 +18,7 @@ public class PopularBrand {
 			survey.put(i, new ToothPaste());
 		}
 		
+		// Display the survey results
 		System.out.println("Survey : ");
 		for (Map.Entry<Integer, ToothPaste> entry : survey.entrySet()) {
 			int key = entry.getKey();
@@ -25,8 +27,9 @@ public class PopularBrand {
 			System.out.println(
 					"Name: " + b.name + "\nAge: " + b.age + "\nCategory : " + b.cat + "\nBrand: " + b.brand);
 		}
-		System.out.println();
-		System.out.println(ToothPaste.MostPopularBrand());
+		
+		// Display the most popular brand
+		System.out.println("\n"+ToothPaste.MostPopularBrand());
 		sc.close();
 	}
 

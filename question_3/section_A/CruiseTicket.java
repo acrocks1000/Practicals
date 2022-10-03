@@ -5,16 +5,20 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class CruiseTicket {
+	
+	// Declare Scanner object
 	private static Scanner sc;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		sc = new Scanner(System.in);
 
-		// HashMap enters traveler details with key == 0 for crew members,
-		// key ==1 for adults and key == 2 for children
-		HashMap<Integer, ArrayList> totalList = new HashMap<Integer, ArrayList>();
+		// HashMap enters traveler details with 
+		// key == 0 for crew members,
+		// key ==1 for adults and 
+		// key == 2 for children
+		HashMap<Integer, ArrayList<Details>> totalList = new HashMap<Integer, ArrayList<Details>>();
 
+		// Seperate arraylist for storing different types of Traveller details
 		ArrayList<Details> crewdet = new ArrayList<Details>();
 		ArrayList<Details> adultdet = new ArrayList<Details>();
 		ArrayList<Details> childdet = new ArrayList<Details>();
@@ -31,8 +35,10 @@ public class CruiseTicket {
 			int ag = sc.nextInt();
 			sc.nextLine();
 
+			// If Traveller's age less than 20 years then he/she is a child
 			if (ag >= 20) {
 				
+				// check whether the traveller is a crew member or not
 				System.out.print("\nAre you a crew Member (y/n)? : ");
 				char choice = Character.toLowerCase(sc.next().charAt(0));
 				System.out.println();
@@ -49,10 +55,12 @@ public class CruiseTicket {
 			travellers--;
 		}
 
+		// Store all data into a single HashMap
 		totalList.put(0, crewdet);
 		totalList.put(1, adultdet);
 		totalList.put(2, childdet);
 
+		// Total number of each category of travellers
 		int crew = totalList.get(0).size();
 		int adult = totalList.get(1).size();
 		int children = totalList.get(2).size();
@@ -61,6 +69,7 @@ public class CruiseTicket {
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.println("\nTotal number of personals on the cruise are : " + (crew + adult + children));
 
+		// Display the Traveller details
 		if (crew + adult + children > 0) {
 			System.out.println("\nDetails of all travellers are : \n");
 			if (crew > 0) {
@@ -92,6 +101,8 @@ public class CruiseTicket {
 				}
 			}
 		}
+		
+		// Display the total amount to be paid for the tickets 
 		System.out.println("\nYour total ticket price is " + ticketPrice);
 		sc.close();
 

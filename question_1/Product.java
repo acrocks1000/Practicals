@@ -5,6 +5,7 @@ public class Product {
 	float price;
 	int quantity;
 
+	// Constructor to enter the values to the instance variables
 	public Product(String productID, String productName, float price, int quantity) {
 		this.productID = productID;
 		this.productName = productName;
@@ -12,6 +13,8 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	// Getter methods for each instance variable
+	
 	public String getProductID() {
 		return productID;
 	}

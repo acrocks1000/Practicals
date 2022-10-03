@@ -4,15 +4,20 @@ import java.util.Scanner;
 
 public class ClubMembership {
 	
-	
+	// Declare the private scanner object
 	private static Scanner scan;
+	
 	public static void main(String[] args) {
 		scan = new Scanner(System.in);
+		
+		// Get input from the user
 		System.out.println("Enter \'1\' for Regular Membership,\nEnter \'2\' for Gold Membership,\nEnter \'3\' for Silver Membership");
 		System.out.print("\nEnter the type of membership : ");
 		int memtype = scan.nextInt();
 		System.out.print("Enter total number of months of club membership : ");
 		int nfm = scan.nextInt();
+		
+		// Calculate the bill based on the type of membership plan opted by the user
 		switch(memtype) {
 		case 1:
 			RegularMembership regularCharges = new RegularMembership();

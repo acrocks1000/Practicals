@@ -1,8 +1,11 @@
 package question_2;
 
+// Parent Class
 public class RegularMembership {
+	
 	public int membershipFee = 0, enrollmentFee = 0, golfservicesFee = 20000, noofMonths;
 	
+	// Method to calculate the club membership bill based on the type of membership plan
 	public int calculateBill() {
 		int totalFee = membershipFee + enrollmentFee + (golfservicesFee*noofMonths);
 		return totalFee;
@@ -10,6 +13,8 @@ public class RegularMembership {
 	}
 }
 
+
+// derived class
 class GoldMember extends RegularMembership {
 	public GoldMember(int noofMonths) {
 		super.membershipFee = 90000;
@@ -22,6 +27,8 @@ class GoldMember extends RegularMembership {
 	}
 }
 
+
+// derived class
 class SilverMember extends RegularMembership{
 	public SilverMember(int noofMonths) {
 		super.membershipFee = 15000;

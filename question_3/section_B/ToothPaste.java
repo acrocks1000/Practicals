@@ -9,6 +9,7 @@ public class ToothPaste {
 	static int colgate = 0, pepsodent = 0, patanjali = 0, dabar_red = 0;
 	char cat;
 
+	// constructor to enter the details from the user
 	public ToothPaste() {
 		scan = new Scanner(System.in);
 		System.out.print("Enter your name : ");
@@ -40,6 +41,7 @@ public class ToothPaste {
 
 	}
 
+	// Calculate the most popular brand based on the number of user using it
 	public static String MostPopularBrand() {
 		int[] mpb = { colgate, pepsodent, patanjali, dabar_red };
 		int max = 0;
